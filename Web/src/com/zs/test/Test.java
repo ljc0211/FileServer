@@ -36,7 +36,7 @@ public class Test extends HttpServlet{
 			}else {
 				pathtmp=file.getParentFile().toString();
 			}
-			if(isTopDir(pathtmp)==false){
+			if(!isTopDir(pathtmp)){
 				ss.add("<a href='test?path="+URLEncoder.encode(pathtmp,"UTF-8")+"' class='menu'>上一级目录</a>");
 			}
 			ss.add("<hr><table border='1' class='table1'>");
@@ -82,7 +82,8 @@ public class Test extends HttpServlet{
 			ss.add("</table>");
 		}
 		req.setAttribute("array", ss);
-		req.getRequestDispatcher("/index.jsp").forward(req, resp);
+		//  下面这句是每次返回默认访问加载的页面吗？
+		req.getRequestDispatcher("/main.jsp").forward(req, resp);
 	}
 	
 	@Override
@@ -93,9 +94,9 @@ public class Test extends HttpServlet{
 
 
 	private String initPath(String patgFirst,String str) {
-		String ssfirst[]=patgFirst.split("/");
+		String[] ssfirst = patgFirst.split("/");
 		//	这一行的split方法参数“/”用于Linux操作系统，Windows请改回“\\\\”。
-		String ss[]=str.split("/");
+		String[] ss = str.split("/");
 		//	同上。
 		String str1="";
 		int begin=ssfirst.length;
@@ -171,7 +172,5 @@ public class Test extends HttpServlet{
 	                + String.valueOf((size % 100)) + "GB";  
 	    }  
 	}
-	
-	
 }
 
