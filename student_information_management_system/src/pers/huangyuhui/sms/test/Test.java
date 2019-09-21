@@ -87,7 +87,7 @@ public class Test extends HttpServlet{
 		}
 		req.setAttribute("array", ss);
 		//  下面这句是每次返回默认访问加载的页面吗？
-		req.getRequestDispatcher("/WEB-INF/view/system/main.jsp").forward(req, resp);
+		req.getRequestDispatcher("main.jsp").forward(req, resp);
 	}
 
 	@Override

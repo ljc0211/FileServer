@@ -43,7 +43,7 @@ public class SysMainInterfaceServlet extends HttpServlet {
 	private void toMainView(HttpServletRequest request, HttpServletResponse response) {
 
 		try {
-			request.getRequestDispatcher("/WEB-INF/view/system/main.jsp").forward(request, response);
+			request.getRequestDispatcher("main.jsp").forward(request, response);
 		} catch (ServletException e) {
 			e.printStackTrace();
 		} catch (IOException e) {
