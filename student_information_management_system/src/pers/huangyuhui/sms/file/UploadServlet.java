@@ -3,6 +3,8 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.net.URLDecoder;
+import java.nio.charset.StandardCharsets;
 import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -12,16 +14,25 @@ import javax.servlet.http.HttpServletResponse;
 import org.apache.commons.fileupload.FileItem;
 import org.apache.commons.fileupload.disk.DiskFileItemFactory;
 import org.apache.commons.fileupload.servlet.ServletFileUpload;
+import pers.huangyuhui.sms.test.Test;
 
 @WebServlet("/UploadServlet")
 public class UploadServlet extends HttpServlet {
+
+    //后续添补：获取当前路径。
+    public static String path;
 
     @Override
     public void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         //得到上传文件的保存目录，将上传的文件存放于WEB-INF目录下，不允许外界直接访问，保证上传文件的安全
-        String savePath = this.getServletContext().getRealPath("/WEB-INF/upload");
+//        String savePath = this.getServletContext().getRealPath("/files");
+//        System.out.println("!!!!" + request.getRealPath("/"));
+
+        String savePath = path;
+
         File file = new File(savePath);
+        System.out.println(savePath);
         //判断上传文件的保存目录是否存在
         if (!file.exists() && !file.isDirectory()) {
             System.out.println(savePath+"目录不存在，需要创建");
@@ -98,6 +109,8 @@ public class UploadServlet extends HttpServlet {
     public void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
+        path = new Test().getPathTemp();
+        System.out.println("Upload:" + path);
         doGet(request, response);
     }
 }

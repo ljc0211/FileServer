@@ -72,7 +72,12 @@
 </head>
 <%request.setCharacterEncoding("utf-8"); %>
     <body>
-        <a href="Test?method=doPost" class="menu">返回到最起点目录</a>
+<%--        <form action="Test" method="post">--%>
+<%--            姓名：<input type="text" name="name"/><br>--%>
+<%--            省份：<input type="text" name="province"><br>--%>
+<%--            <input type="submit" value="返回到最起点目录">--%>
+<%--        </form>--%>
+        <a href="test" class="menu">显示根目录</a>
         <br>
         <a href="index.jsp" class="menu">注销登录</a>
         <br>

@@ -20,8 +20,14 @@ import javax.servlet.http.HttpServletResponse;
 
 @WebServlet("/Test")
 public class Test extends HttpServlet{
+	//后续添补：获取当前路径。
+	public static String pathTemp;
 
 	private final String tomcatName="apache-tomcat-9.0.24";
+
+	public String getPathTemp() {
+		return pathTemp;
+	}
 
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp)
@@ -29,6 +35,7 @@ public class Test extends HttpServlet{
 		final String PATH_BEGIN=req.getRealPath("/");
 		req.setCharacterEncoding("utf-8");
 		String path=req.getParameter("path")==null?PATH_BEGIN+"files":URLDecoder.decode(req.getParameter("path"), StandardCharsets.UTF_8);
+		System.out.println("path:" + path);
 		File file=new File(path);
 		File[] tempList = file.listFiles();
 		List<String> ss=new ArrayList<String>();
@@ -36,8 +43,10 @@ public class Test extends HttpServlet{
 			String pathtmp="";
 
 			pathtmp=file.toString();
+			pathTemp = pathtmp;
 
-			System.out.println("pathtmp:" + pathtmp);
+			System.out.println("pathTemp:" + pathTemp);
+
 			//	返回上一级目录操作。
 			if(!isTopDir(pathtmp)){
 				pathtmp=file.getParentFile().toString();
@@ -76,6 +85,7 @@ public class Test extends HttpServlet{
 					cal.setTimeInMillis(time);
 					String datetime=cal.getTime().toLocaleString();
 					ss.add("<tr>");
+//					ss.add("<td><a href='test?path="+URLEncoder.encode(tempList[i].toString(), StandardCharsets.UTF_8)+"' class='dirtype' >"+tempList[i].getName()+"</a></td>");
 					ss.add("<td><a href='test?path="+URLEncoder.encode(tempList[i].toString(), StandardCharsets.UTF_8)+"' class='dirtype' >"+tempList[i].getName()+"</a></td>");
 					ss.add("<td class='td_center'><span class='lastTime'>"+datetime+"</span></td>");
 					ss.add("<td></td>");
