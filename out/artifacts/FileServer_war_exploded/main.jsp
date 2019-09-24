@@ -85,9 +85,32 @@
             ${f }
         </c:forEach>
 
+        <h3>当前目录下新建文件夹：</h3>
+        <br>
+        <form action="CreateDreactary" method="post">
+            <p>新建文件夹名称：<input type="text" name="userName" /></p>
+            <input type="submit" value="提交" />
+        </form>
+
+        <br>
+
+        <h3>当前目录下上传文件：</h3>
+        <br>
         <form method="post" action="UploadServlet" enctype="multipart/form-data">
+            <br>
+            要上传的文件:
             <input type="file" name="file" value="file">
+            <br>
             <input type="submit" value="确定">
+        </form>
+
+        <br>
+
+        <h3>当前目录下删除文件：</h3>
+        <br>
+        <form action="Delete" method="post">
+            <p>删除文件名称：<input type="text" name="userName" /></p>
+            <input type="submit" value="提交" />
         </form>
 
     </body>

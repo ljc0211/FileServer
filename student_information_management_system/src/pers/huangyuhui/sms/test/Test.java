@@ -35,7 +35,6 @@ public class Test extends HttpServlet{
 		final String PATH_BEGIN=req.getRealPath("/");
 		req.setCharacterEncoding("utf-8");
 		String path=req.getParameter("path")==null?PATH_BEGIN+"files":URLDecoder.decode(req.getParameter("path"), StandardCharsets.UTF_8);
-		System.out.println("path:" + path);
 		File file=new File(path);
 		File[] tempList = file.listFiles();
 		List<String> ss=new ArrayList<String>();
@@ -44,8 +43,6 @@ public class Test extends HttpServlet{
 
 			pathtmp=file.toString();
 			pathTemp = pathtmp;
-
-			System.out.println("pathTemp:" + pathTemp);
 
 			//	返回上一级目录操作。
 			if(!isTopDir(pathtmp)){
@@ -78,6 +75,7 @@ public class Test extends HttpServlet{
 					ss.add("<td class='td_center'><span class='size'>"+StringSize+"</span></td>");
 					ss.add("<td><a href='"+str+"' download='"+tempList[i].getName()+"' class='filetype'>下载</a></td>");
 					ss.add("</tr>");
+					fis.close();
 				}else if (tempList[i].isDirectory()) {
 					//获取最后修改时间
 					Calendar cal = Calendar.getInstance();
