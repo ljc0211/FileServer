@@ -1,16 +1,16 @@
-package pers.huangyuhui.sms.dao;
+package pers.liuchengji.sms.dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import pers.huangyuhui.sms.util.DbUtil;
+import pers.liuchengji.sms.util.DbUtil;
 
 /**
  * @ClassName: BasicDao
  * @Description: 基本数据库操作
- * @author: HuangYuhui
+ * @author: liuchengji
  * @date: May 10, 2019 2:32:54 PM
  * 
  */

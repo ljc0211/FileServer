@@ -1,14 +1,14 @@
 /**  
  * GitHub address: https://yubuntu0109.github.io/
  * @Title: DbUtil2.java   
- * @Package pers.huangyuhui.sms.util   
+ * @Package pers.liuchengji.sms.util
  * @Description: 连接数据库
  * @author: Huang Yuhui     
  * @date: May 10, 2019 1:50:45 PM   
  * @version  1.0
  *
  */
-package pers.huangyuhui.sms.util;
+package pers.liuchengji.sms.util;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -16,7 +16,7 @@ import java.sql.DriverManager;
 /**
  * @ClassName: DbUtil
  * @Description: 操控数据库的工具类
- * @author: HuangYuhui
+ * @author: liuchengji
  * @date: May 10, 2019 1:50:45 PM
  * 
  */

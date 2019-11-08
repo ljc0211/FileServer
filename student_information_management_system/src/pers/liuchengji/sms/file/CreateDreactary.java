@@ -1,6 +1,6 @@
-package pers.huangyuhui.sms.file;
+package pers.liuchengji.sms.file;
 
-import pers.huangyuhui.sms.test.Test;
+import pers.liuchengji.sms.test.Test;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -11,10 +11,8 @@ import javax.servlet.http.HttpSession;
 import java.io.File;
 import java.io.IOException;
 
-import org.apache.commons.io.FileUtils;
-
-@WebServlet("/Delete")
-public class Delete extends HttpServlet {
+@WebServlet("/CreateDreactary")
+public class CreateDreactary extends HttpServlet {
 
     //后续添补：获取当前路径。
     public static String path;
@@ -24,7 +22,7 @@ public class Delete extends HttpServlet {
             throws ServletException, IOException {
 
 
-        del(request, response);
+        directory(request, response);
     }
 
     public void del(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
@@ -33,22 +31,35 @@ public class Delete extends HttpServlet {
         name = path + "\\" + name;
         File file = new File(name);
 
-        System.out.println(name);
-
-
-        if (file.exists()) {
-            if (file.isDirectory()) {
-                FileUtils.deleteDirectory(file);
-            } else {
-                FileUtils.forceDelete(file);
-            }
-        }
+        if (file.exists()) file.delete();
         String message = null;
 
         if (file.exists()) {
             message = "删除失败!";
         } else {
             message = "删除成功!";
+        }
+
+        request.setAttribute("message",message);
+        request.getRequestDispatcher("/WEB-INF/message.jsp").forward(request, response);
+    }
+
+    public void directory(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
+        // 获取用户提交的新建目录名。
+        String name = request.getParameter("userName");
+        name = path + "\\" + name;
+        File file = new File(name);
+
+        if (!file.exists() && !file.isDirectory()) {
+            //创建目录
+            file.mkdir();
+        }
+        String message = null;
+
+        if (!file.exists() || !file.isDirectory()) {
+            message = "创建目录失败!";
+        } else {
+            message = "创建目录成功!";
         }
 
         request.setAttribute("message",message);

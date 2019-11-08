@@ -1,4 +1,4 @@
-package pers.huangyuhui.sms.servlet;
+package pers.liuchengji.sms.servlet;
 
 import java.io.IOException;
 
@@ -9,13 +9,13 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import pers.huangyuhui.sms.dao.AdminDao;
-import pers.huangyuhui.sms.model.AdminInfo;
+import pers.liuchengji.sms.dao.AdminDao;
+import pers.liuchengji.sms.model.AdminInfo;
 
 /**
  * @ClassName: VerifyLoginServlet
  * @Description: 验证用户登录
- * @author: HuangYuhui
+ * @author: liuchengji
  * @date: May 6, 2019 10:19:15 PM
  */
 @WebServlet("/LoginServlet")

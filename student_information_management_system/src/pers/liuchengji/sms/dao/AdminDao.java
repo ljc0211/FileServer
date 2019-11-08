@@ -2,25 +2,25 @@
  * GitHub address: https://yubuntu0109.github.io/
  *
  * @Title: AdminDao.java
- * @Package pers.huangyuhui.sms.dao
+ * @Package pers.liuchengji.sms.dao
  * @Description: 数据库操作
  * @author: Huang Yuhui
  * @date: May 10, 2019 5:44:31 PM
  * @version 1.0
  */
-package pers.huangyuhui.sms.dao;
+package pers.liuchengji.sms.dao;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Connection;
 import java.sql.Statement;
 
-import pers.huangyuhui.sms.model.AdminInfo;
+import pers.liuchengji.sms.model.AdminInfo;
 
 /**
  * @ClassName: AdminDao
  * @Description: 管理员的数据库的操作
- * @author: HuangYuhui
+ * @author: liuchengji
  * @date: May 10, 2019 5:44:31 PM
  */
 public class AdminDao extends BasicDao {

@@ -7,7 +7,7 @@
 
   <servlet>
     <servlet-name>test</servlet-name>
-    <servlet-class>pers.huangyuhui.sms.test.Test</servlet-class>
+    <servlet-class>pers.liuchengji.sms.test.Test</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>test</servlet-name>

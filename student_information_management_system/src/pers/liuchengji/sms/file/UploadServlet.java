@@ -1,4 +1,4 @@
-package pers.huangyuhui.sms.file;
+package pers.liuchengji.sms.file;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -14,7 +14,7 @@ import javax.servlet.http.HttpServletResponse;
 import org.apache.commons.fileupload.FileItem;
 import org.apache.commons.fileupload.disk.DiskFileItemFactory;
 import org.apache.commons.fileupload.servlet.ServletFileUpload;
-import pers.huangyuhui.sms.test.Test;
+import pers.liuchengji.sms.test.Test;
 
 @WebServlet("/UploadServlet")
 public class UploadServlet extends HttpServlet {

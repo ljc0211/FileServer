@@ -1,4 +1,4 @@
-package pers.huangyuhui.sms.servlet;
+package pers.liuchengji.sms.servlet;
 
 import java.io.IOException;
 
@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * @ClassName: SysMainInterfaceServlet
  * @Description: 操控系统主页面
- * @author: HuangYuhui
+ * @author: liuchengji
  * @date: May 10, 2019 9:24:09 PM
  *
  */

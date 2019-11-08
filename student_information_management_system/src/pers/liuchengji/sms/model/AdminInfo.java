@@ -1,9 +1,9 @@
-package pers.huangyuhui.sms.model;
+package pers.liuchengji.sms.model;
 
 /**
  * @ClassName: Admin
  * @Description: 管理员信息
- * @author: HuangYuhui
+ * @author: liuchengji
  * @date: May 10, 2019 2:11:44 PM
  * 
  */

@@ -1,4 +1,4 @@
-package pers.huangyuhui.sms.servlet;
+package pers.liuchengji.sms.servlet;
 
 import java.io.IOException;
 import java.sql.SQLException;
@@ -10,8 +10,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import pers.huangyuhui.sms.dao.AdminDao;
-import pers.huangyuhui.sms.model.AdminInfo;
+import pers.liuchengji.sms.dao.AdminDao;
+import pers.liuchengji.sms.model.AdminInfo;
 
 @WebServlet("/RegisterServlet")
 public class RegisterServlet extends HttpServlet {

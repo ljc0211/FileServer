@@ -1,14 +1,14 @@
 /**  
  * GitHub address: https://yubuntu0109.github.io/
  * @Title: DbConfig.java   
- * @Package pers.huangyuhui.sms.util   
+ * @Package pers.liuchengji.sms.util
  * @Description: 数据库配置
  * @author: Huang Yuhui     
  * @date: May 10, 2019 1:29:20 PM   
  * @version 1.0
  *
  */
-package pers.huangyuhui.sms.util;
+package pers.liuchengji.sms.util;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -18,7 +18,7 @@ import java.util.Properties;
 /**
  * @ClassName: DbConfig
  * @Description: 初始化数据库连接信息
- * @author: HuangYuhui
+ * @author: liuchengji
  * @date: May 10, 2019 1:29:20 PM
  * 
  */
